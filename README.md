@@ -18,4 +18,4 @@ Asian Kitchen Menu, Asya mutfağından çeşitli yemeklerin listelendiği bir we
 
 Projenin canlı sürümüne aşağıdaki URL'den ulaşabilirsiniz:
 
-[Akinon Projesi](https://mustafasrbs.github.io/akinon/)
+[Akinon Projesi]([https://mustafasrbs.github.io/akinon/](https://mustafasrbs.github.io/Asian-Kitchen-s-Menu/))
