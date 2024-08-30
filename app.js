@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(response => response.json())
       .then(data => {
         const menu = data;
-        displayMenuItems(menu); // Menü öğelerini sayfada gösteriyoruz
-        displayMenuButtons(menu); // Filtre butonlarını dinamik olarak oluşturuyoruz
+        displayMenuItems(menu);
+        displayMenuButtons(menu); 
       })
       .catch(error => console.error('Fetch operation failed:', error));
   });
@@ -30,5 +30,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     sectionCenter.innerHTML = displayMenu.join('');
   }
+   
+  function displayMenuButtons(menuItems) {
+    const btnContainer = document.querySelector('.btn-container');
+    const categories = menuItems.reduce((values, item) => {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    }, ['All']);
   
+    const categoryBtns = categories.map(category => {
+      return `<button class="btn-item filter-btn" data-id="${category}">${category}</button>`;
+    }).join('');
+    
+    btnContainer.innerHTML = categoryBtns;
   
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const category = e.currentTarget.dataset.id;
+        const menuCategory = menuItems.filter(menuItem => {
+          if (menuItem.category === category) {
+            return menuItem;
+          }
+        });
+        if (category === 'All') {
+          displayMenuItems(menuItems);
+        } else {
+          displayMenuItems(menuCategory);
+        }
+      });
+    });
+  }
