@@ -13,3 +13,7 @@ Asian Kitchen Menu, Asya mutfağından çeşitli yemeklerin listelendiği bir we
 1. Bu depo'yu klonlayın:
    ```bash
  git clone https://github.com/mustafasrbs/Asian-Kitchen-s-Menu.git
+
+ Projenin canlı sürümüne aşağıdaki URL'den ulaşabilirsiniz:
+
+ https://mustafasrbs.github.io/Asian-Kitchen-s-Menu/
